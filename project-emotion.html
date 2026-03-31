@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>프로젝트 상세 - 감정창고</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span>K</span>imEunSeob</a>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <span style="font-family: 'Poppins', Arial, sans-serif; font-weight: 700; font-size: 18px; color: #000 !important; letter-spacing: -0.5px;">← 메인으로 돌아가기</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg'); height: 400px !important; min-height: 400px;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text justify-content-center align-items-center" style="height: 400px !important;">
+                <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
+                    <div class="text text-center" style="margin-top: 50px;">
+                        <span class="subheading" style="color: #fff;">Capstone Design Project</span>
+                        <h1 class="mb-4" style="font-size: 40px; font-weight: 700;">AI 기반 감정 분석 및<br>공감 상호작용 서비스 '감정창고'</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section" id="project-detail-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ftco-animate">
+                    <h2 class="mb-3">1. 프로젝트 개요</h2>
+                    <p>단순한 텍스트 기록을 넘어 AI가 사용자의 감정을 분석하고 따뜻한 위로와 피드백을 건네는 지능형 일기 서비스입니다. 기존 일기 앱들의 단방향적인 텍스트 저장 기능을 개선하여, LLM(Gemini)을 활용해 맥락을 이해하고 과거 기록을 바탕으로 개인화된 멘탈 케어를 제공하는 것을 목표로 합니다.</p>
+                    
+                    <h2 class="mb-3 mt-5">2. 담당 역할 및 핵심 기여 (Backend / DB)</h2>
+                    <p>팀 내에서 <strong>데이터 기획, API 엔지니어링, 데이터베이스 구축</strong>을 총괄하고 있습니다.</p>
+                    <ul>
+                        <li><strong>데이터베이스 구조 설계:</strong> 사용자 정보, 일기 원문, 분석된 복합 감정 수치를 효율적으로 저장하고 조회하기 위한 MySQL 관계형 DB 스키마 설계 (ERD 구축)</li>
+                        <li><strong>Gemini API 연동:</strong> 비정형 텍스트 데이터에서 감정 키워드와 수치를 정교하게 추출해 내기 위한 프롬프트 엔지니어링 및 파이프라인 구축</li>
+                        <li><strong>맞춤형 큐레이션 로직 설계:</strong> AI가 도출한 감정 분석 결과를 기반으로 사용자에게 적합한 콘텐츠(음악, 활동 등)를 매핑하는 알고리즘 기획</li>
+                    </ul>
+
+                    <p class="mt-4">
+                        <img src="https://via.placeholder.com/800x400/eeeeee/333333/?text=Insert+Your+DB+ERD+Image+Here" alt="DB ERD 이미지 삽입" class="img-fluid rounded shadow">
+                    </p>
+
+                    <h2 class="mb-3 mt-5">3. 트러블슈팅 (Troubleshooting) 💡</h2>
+                    <div class="p-4 bg-light rounded">
+                        <h4 class="h5 font-weight-bold">이슈: LLM API 호출에 따른 응답 지연 (Latency) 문제</h4>
+                        <p><strong>원인 분석:</strong> 사용자가 일기를 저장할 때마다 Gemini API를 동기적으로 호출하여 감정 분석 결과를 기다리게 되면, 서버 응답 시간이 길어져 사용자 경험(UX)이 크게 저하되는 문제가 발생할 수 있습니다.</p>
+                        <p><strong>해결 과정 및 고민:</strong> 
+                            단순 저장은 즉각적으로 DB에 반영하되, 감정 분석 과정은 비동기(Asynchronous) 방식이나 백그라운드 태스크로 분리하여 처리하는 아키텍처를 검토 및 적용 중입니다. 이를 통해 일기 저장의 안정성을 확보하고 데이터 분석 대기 시간을 시각적으로 완화할 수 있도록 프론트엔드 팀과 협의하여 로직을 최적화하고 있습니다.
+                        </p>
+                    </div>
+
+                </div> <div class="col-md-4 sidebar ftco-animate">
+                    <div class="sidebar-box p-4 bg-light rounded shadow-sm">
+                        <h3 class="heading-sidebar">Project Info</h3>
+                        <div class="block-21 mb-4 d-flex">
+                            <div class="text">
+                                <h3 class="heading">개발 기간</h3>
+                                <div class="meta">
+                                    <div><span class="icon-calendar"></span> 2026.03 ~ 2026.11 (예정)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-21 mb-4 d-flex">
+                            <div class="text">
+                                <h3 class="heading">참여 인원</h3>
+                                <div class="meta">
+                                    <div><span class="icon-person"></span> 3인 (백엔드1, 데이터/API1, 프론트엔드1)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-21 mb-4 d-flex">
+                            <div class="text">
+                                <h3 class="heading">기술 스택 (Tech Stack)</h3>
+                                <div class="meta">
+                                    <div><span class="badge badge-primary p-2 mb-1">Python</span></div>
+                                    <div><span class="badge badge-info p-2 mb-1">MySQL</span></div>
+                                    <div><span class="badge badge-warning p-2 mb-1">Gemini API</span></div>
+                                    <div><span class="badge badge-secondary p-2 mb-1">React.js</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-21 mb-4 d-flex">
+                            <div class="text">
+                                <h3 class="heading">관련 링크</h3>
+                                <div class="meta">
+                                    <div><a href="#" class="btn btn-outline-dark btn-sm w-100 mb-2">GitHub Repository</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> </div>
+        </div>
+    </section>
+
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+        </svg></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
