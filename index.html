@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>백엔드 개발자 김은섭 포트폴리오</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* 전체 폰트 및 배경/글자색 통일 */
+        body, h1, h2, h3, h4, h5, h6, p, a, span, li, div { font-family: 'Pretendard', sans-serif !important; color: #222 !important; }
+        body, .ftco-section, .contact-section { background-color: #ffffff !important; }
+        .ftco-about { background-color: #fafafa !important; }
+        
+        /* 박스 디자인 */
+        .bg-white, .resume-wrap, .box, .sidebar-box, .tech-box { 
+            background-color: #fff !important; box-shadow: none !important; border: 1px solid #eaeaea !important; 
+            border-radius: 8px !important; transition: all 0.2s ease; padding: 30px !important;
+        }
+
+        /* 💎 마우스 호버 및 포인트 컬러 (K 로고 파란색: #4F86F3) */
+        .resume-wrap:hover, .tech-box:hover { border-color: #4F86F3 !important; transform: translateY(-2px); }
+        h1, h2, h3, .heading-section h2 { font-weight: 800 !important; letter-spacing: -0.5px; }
+        .text-primary, .icon span { color: #4F86F3 !important; }
+        
+        .skill-list { list-style: none; padding-left: 0; }
+        .skill-list li { margin-bottom: 10px; font-size: 15px; color: #444 !important; padding-left: 15px; position: relative; }
+        .skill-list li::before { content: "▪"; position: absolute; left: 0; color: #4F86F3; font-weight: bold; }
+        
+        .navbar-brand span { color: #111 !important; }
+        .ftco-navbar-light.scrolled { background: #fff !important; border-bottom: 1px solid #eee; }
+        .ftco-navbar-light.scrolled .nav-link { color: #111 !important; font-weight: 600; }
+        a:hover { color: #4F86F3 !important; text-decoration: none; }
+        
+        /* 💎 히어로 섹션 & 파티클 배경 설정 */
+        #home-section { position: relative; background-color: #fff; overflow: hidden; }
+        #particles-js {
+            position: absolute; width: 100%; height: 100%;
+            top: 0; left: 0; z-index: 1; /* 글자 뒤로 배치 */
+        }
+        .hero-container { position: relative; z-index: 2; pointer-events: none; } 
+        .hero-container * { pointer-events: auto; }
+
+        /* 💎 첫 부분 애니메이션 그래픽 CSS (K 로고 파란색) */
+        .tech-pulser {
+            width: 60px; height: 60px; 
+            background: rgba(79, 134, 243, 0.05); 
+            border: 2px solid #4F86F3;
+            border-radius: 50%; margin: 0 auto 30px auto; position: relative; animation: pulse-border 2.5s infinite;
+        }
+        .tech-pulser::after {
+            content: "{}"; font-family: monospace; color: #4F86F3; font-weight: bold; font-size: 22px;
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        }
+        @keyframes pulse-border {
+            0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(79, 134, 243, 0.5); }
+            70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(79, 134, 243, 0); }
+            100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(79, 134, 243, 0); }
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index-notion.html"><span>K</span>imEunSeob</a>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+                    <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+                    <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+                    <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
+                    <li class="nav-item"><a href="#tech-section" class="nav-link"><span>Tech Stack</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-wrap js-fullheight" id="home-section">
+        <div id="particles-js"></div> 
+        <div class="container hero-container">
+            <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
+                <div class="col-lg-8 ftco-animate d-flex align-items-center">
+                    <div class="text text-center w-100">
+                        <div class="tech-pulser ftco-animate"></div>
+                        <span class="subheading" style="color:#666; font-weight:600;">Backend Developer Portfolio</span>
+                        <h1 style="color:#111;">김은섭</h1>
+                        <h2 style="color:#444; font-size: 24px; margin-top:15px;">
+                            데이터 무결성과 시스템 확장을 고민하는 백엔드 엔지니어
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
+        <div class="container">
+            <div class="row d-flex no-gutters bg-white" style="border: 1px solid #eee; border-radius: 12px; overflow: hidden;">
+                <div class="col-md-5 d-flex align-items-center justify-content-center ftco-animate" style="background-color: #f9f9f9; padding: 40px;">
+                    <div style="width: 200px; height: 266px; border: 1px solid #ddd; overflow: hidden; border-radius: 4px; background:#fff; padding: 10px;">
+                        <img src="images/about.jpg" alt="김은섭" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-7 pl-md-5 py-5 pr-5">
+                    <div class="heading-section ftco-animate">
+                        <h2 class="mb-4">About Me</h2>
+                        <p style="font-size: 18px; line-height: 1.8;">
+                            단순히 코드가 돌아가는 것에 만족하지 않고, <strong>"왜 이 구조가 최선인가?"</strong>를 묻는 백엔드 개발자입니다.<br>
+                            오픈소스 코드를 뜯어보며 타인의 아키텍처를 분석하는 것을 즐기고, 게임 최적화 경험을 통해 성능 개선에 익숙합니다.
+                        </p>
+                        <ul class="about-info mt-4 px-md-0 px-2" style="font-size:16px;">
+                            <li class="d-flex"><span>Email:</span> <span style="color:#111; font-weight:600;">dmstjq55@naver.com</span></li>
+                            <li class="d-flex"><span>GitHub: </span> <a href="https://github.com/ggcc1302" target="_blank" style="color:#4F86F3; font-weight:600; text-decoration:underline;">github.com/ggcc1302</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pb goto-here" id="resume-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    
+                    <h2 class="heading mb-4">Education & Certificates</h2>
+                    <div class="resume-wrap ftco-animate mb-5">
+                        <span class="date">재학 중 (3학년)</span>
+                        <h2 style="font-size: 20px; margin-top:5px;">서일대학교 소프트웨어공학과</h2>
+                        <p class="mt-2">자료구조, 알고리즘 등 컴퓨터 공학 기초 지식을 다지며 캡스톤 디자인 프로젝트 수행 중</p>
+                        <hr style="margin:20px 0; border-top:1px dashed #eee;">
+                        <span class="date">2026 하반기 취득 예정</span>
+                        <h2 style="font-size: 20px; margin-top:5px;">SQLD (SQL 개발자) & 정보처리산업기사</h2>
+                        <p class="mt-2">관계형 DB 설계, 인덱스 튜닝 및 효율적인 쿼리 작성을 위한 데이터베이스 전문성 검증 준비</p>
+                    </div>
+
+                    <h2 class="heading mb-4" id="projects-section">Project Experience</h2>
+                    
+                    <div class="resume-wrap ftco-animate">
+                        <span class="date">2026.03 - 진행 중</span>
+                        <h2 style="font-size: 22px;"><a href="project-emotion.html" target="_blank" style="text-decoration: underline;">AI 기반 감정 분석 서비스 '감정창고' (캡스톤 디자인)</a></h2>
+                        <span class="position" style="color:#666; font-weight:600;">API 엔지니어 및 DB 설계 담당</span>
+                        <p class="mt-3">사용자 일기 텍스트에서 복합 감정을 추출하여 분석 결과를 제공하는 백엔드 서버 및 DB 구축</p>
+                        <div style="background-color:#f9f9f9; padding:20px; border-radius:5px; margin-top:15px; border:1px solid #eee;">
+                            <strong style="color:#111;">[Tech Focus & Troubleshooting]</strong>
+                            <ul class="skill-list mt-2 mb-0">
+                                <li><strong>DB 정규화:</strong> 사용자 데이터와 일별 감정 분석 수치(수치형 데이터)를 분리하여 N:M 구조 스키마 설계</li>
+                                <li><strong>API 최적화:</strong> Gemini API 호출 시 발생하는 응답 지연(Timeout) 병목을 해결하기 위해 비동기(Async) 처리 도입 검토</li>
+                                <li><strong>프롬프트 엔지니어링:</strong> JSON 형태로만 일관성 있게 감정 데이터를 반환하도록 백엔드 파싱용 API 프롬프트 고도화</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resume-wrap ftco-animate">
+                        <span class="date">개인 활동 (진행 중)</span>
+                        <h2 style="font-size: 22px;"><a href="project-opensource.html" target="_blank" style="text-decoration: underline;">BallonTranslator (오픈소스) 기능 확장 및 리팩토링</a></h2>
+                        <span class="position" style="color:#666; font-weight:600;">유지보수 및 신규 기능 통합</span>
+                        <p class="mt-3">기존 이미지 텍스트 번역 오픈소스의 레거시 코드를 분석하고, 작업 효율을 위한 I/O 및 로직 개선</p>
+                        <div style="background-color:#f9f9f9; padding:20px; border-radius:5px; margin-top:15px; border:1px solid #eee;">
+                            <strong style="color:#111;">[Tech Focus & Troubleshooting]</strong>
+                            <ul class="skill-list mt-2 mb-0">
+                                <li><strong>코드 리딩 & 통합:</strong> 방대한 타인의 코드를 분석하여, 기존 아키텍처를 해치지 않고 단축키 제어 및 모드 변경 로직 추가</li>
+                                <li><strong>데이터 I/O 개선:</strong> 분석된 텍스트 추출 및 외부 저장(Import/Export) 기능을 구현하여 데이터 관리 편의성 증대</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resume-wrap ftco-animate">
+                        <span class="date">개인 프로젝트</span>
+                        <h2 style="font-size: 22px;"><a href="project-exchange.html" target="_blank" style="text-decoration: underline;">실시간 API 연동 환율 변환 시스템</a></h2>
+                        <p class="mt-3">공공데이터 REST API를 호출하여 실시간 환율 정보를 수집/파싱하는 애플리케이션 (Python, Tkinter)</p>
+                        <div style="background-color:#f9f9f9; padding:20px; border-radius:5px; margin-top:15px; border:1px solid #eee;">
+                            <strong style="color:#111;">[Tech Focus & Troubleshooting]</strong>
+                            <ul class="skill-list mt-2 mb-0">
+                                <li><strong>예외 처리(Exception Handling):</strong> 외부 API 서버 장애나 네트워크 지연 시 프로그램이 튕기지 않도록 Try-Except 기반의 예외 처리 로직 구현</li>
+                                <li><strong>데이터 파싱:</strong> HTTP 요청으로 받아온 복잡한 JSON 응답 데이터 중 필요한 환율 수치만 정제하여 객체화</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resume-wrap ftco-animate">
+                        <span class="date">개인 프로젝트 (Steam 출시 목표)</span>
+                        <h2 style="font-size: 22px;"><a href="project-game.html" target="_blank" style="text-decoration: underline;">무협 액션 로그라이크 C# 1인 개발</a></h2>
+                        <p class="mt-3">Vampire Survivors 스타일의 대규모 몬스터 웨이브 처리 및 시스템 아키텍처 설계 (Unity, C#)</p>
+                        <div style="background-color:#f9f9f9; padding:20px; border-radius:5px; margin-top:15px; border:1px solid #eee;">
+                            <strong style="color:#111;">[Tech Focus & Troubleshooting]</strong>
+                            <ul class="skill-list mt-2 mb-0">
+                                <li><strong>메모리 최적화:</strong> 수백 마리의 적이 스폰/사망할 때 발생하는 가비지 컬렉터(GC) 부하를 줄이기 위해 오브젝트 풀링(Object Pooling) 기법 적용</li>
+                                <li><strong>확장성:</strong> 향후 백엔드 연동(유저 데이터, 랭킹 저장 시스템)을 고려한 데이터 구조 모듈화 설계</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2 class="heading mb-4 mt-5" id="tech-section">Tech Stack & Skills</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4 animate-box">
+                            <div class="tech-box p-4" style="height: 100%;">
+                                <h3 style="font-size:18px; border-bottom:2px solid #333; padding-bottom:10px; display:flex; justify-content:space-between; align-items:center;">
+                                    Backend / Python
+                                    <a href="blog-python.html" target="_blank" style="font-size:12px; color:#4F86F3; text-decoration:underline; font-weight:normal;">학습 노트 📝</a>
+                                </h3>
+                                <ul class="skill-list mt-3">
+                                    <li>자료구조(List, Dict, Set)를 상황에 맞게 적재적소에 활용 가능</li>
+                                    <li>외부 REST API 호출, JSON 데이터 파싱 및 가공 처리 능숙</li>
+                                    <li>Try-Except를 활용한 견고한 에러 핸들링 로직 작성 경험</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4 animate-box">
+                            <div class="tech-box p-4" style="height: 100%;">
+                                <h3 style="font-size:18px; border-bottom:2px solid #333; padding-bottom:10px;">Database / SQL</h3>
+                                <ul class="skill-list mt-3">
+                                    <li>MySQL 기반의 관계형 데이터베이스(RDBMS) 테이블 및 스키마 설계</li>
+                                    <li>서비스 로직에 맞춘 N:M 관계 정규화 및 ERD 도출 경험</li>
+                                    <li>SQLD 자격증 준비를 통한 쿼리 실행 계획 및 인덱스 튜닝 기본기 학습</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4 animate-box">
+                            <div class="tech-box p-4" style="height: 100%;">
+                                <h3 style="font-size:18px; border-bottom:2px solid #333; padding-bottom:10px;">Architecture & Environment</h3>
+                                <ul class="skill-list mt-3">
+                                    <li>Git/GitHub을 활용한 버전 관리 및 코드 백업/배포</li>
+                                    <li>Linux 환경에서의 모델 다운로드 및 Jupyter 구동 등 CLI 환경 적응력</li>
+                                    <li>타인의 오픈소스 코드를 리딩하고 충돌 없이 구조를 확장하는 유지보수 경험</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4 animate-box">
+                            <div class="tech-box p-4" style="height: 100%;">
+                                <h3 style="font-size:18px; border-bottom:2px solid #333; padding-bottom:10px;">AI Tools & Others</h3>
+                                <ul class="skill-list mt-3">
+                                    <li>Gemini 등 LLM API를 활용한 프롬프트 엔지니어링 및 JSON 데이터 추출 파이프라인 구축</li>
+                                    <li>Unity / C#을 활용한 객체 지향 프로그래밍 및 메모리 최적화 설계 경험</li>
+                                    <li>HTML/CSS 등 프론트엔드 기본 구조 이해</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="ftco-footer ftco-section mt-5" style="border-top:1px solid #eee; padding: 4em 0; background:#f9f9f9;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p style="color:#666; font-size:14px;">
+                        Copyright &copy; <script>document.write(new Date().getFullYear());</script> EunSeob Kim. All rights reserved.<br>
+                        Designed for Reliability and Performance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#4F86F3" }, /* 파란색 */
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": false }, 
+                "size": { "value": 3, "random": true },       
+                "line_linked": { 
+                    "enable": true, 
+                    "distance": 150, 
+                    "color": "#4F86F3", /* 파란색 */
+                    "opacity": 0.25, 
+                    "width": 1       
+                },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.6 } } }
+            },
+            "retina_detect": true
+        });
+    </script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
