@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>SQLD & Database Architecture Study Note</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body, h1, h2, h3, h4, p, span, a, li, strong, code { font-family: 'Pretendard', sans-serif !important; }
+        #ftco-navbar { background-color: #ffffff !important; border-bottom: 1px solid #eaeaea !important; box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important; }
+        .navbar-brand { color: #111 !important; }
+        .content-section { padding: 50px 0; border-bottom: 1px dashed #e0e0e0; }
+        .content-section:last-child { border-bottom: none; }
+        .sql-card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 30px; margin-bottom: 25px; transition: 0.3s; height: 100%; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+        .sql-card:hover { border-color: #4F86F3; box-shadow: 0 8px 20px rgba(79, 134, 243, 0.08); transform: translateY(-3px); }
+        .code-header { background: #2c313c; color: #fff; padding: 10px 15px; border-radius: 8px 8px 0 0; font-size: 13px; font-family: 'Consolas', monospace; border-bottom: 1px solid #444; }
+        pre { background: #282c34; color: #abb2bf; padding: 20px; border-radius: 0 0 8px 8px; font-size: 14.5px; margin-top: 0; font-family: 'Consolas', monospace; overflow-x: auto; line-height: 1.6; }
+        .tag-badge { background: rgba(79, 134, 243, 0.1); color: #4F86F3; padding: 6px 14px; border-radius: 20px; font-size: 14px; font-weight: 700; display: inline-block; margin-bottom: 15px; border: 1px solid rgba(79, 134, 243, 0.2); }
+        h3 { font-weight: 800; color: #111; margin-bottom: 25px; font-size: 26px; }
+        h4 { font-weight: 700; color: #222; margin-bottom: 15px; font-size: 18px; }
+        .summary-box { background: #f8f9fa; border-left: 5px solid #4F86F3; padding: 30px; margin: 30px 0 50px 0; border-radius: 0 12px 12px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+        .highlight-text { color: #4F86F3; font-weight: 700; }
+        ul.custom-list { padding-left: 20px; color: #555; }
+        ul.custom-list li { margin-bottom: 8px; }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span style="color:#4F86F3;">K</span>imEunSeob</a>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <span style="font-weight: 700; font-size: 16px; color: #111 !important; letter-spacing: -0.5px;">← 메인 포트폴리오로 돌아가기</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-wrap js-fullheight" style="background-color: #121826; height: 350px !important; min-height: 350px; position: relative;">
+        <div class="overlay" style="background: rgba(0,0,0,0.4);"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text justify-content-center align-items-center" style="height: 350px !important;">
+                <div class="col-lg-9 ftco-animate d-flex align-items-center mt-4">
+                    <div class="text text-center w-100">
+                        <span class="subheading" style="color: #4F86F3; font-weight:700; letter-spacing: 1px;">DATABASE ARCHITECTURE & TUNING</span>
+                        <h1 class="mb-3" style="font-size: 42px; font-weight: 800; color: #fff; letter-spacing: -1px;">SQLD 및 데이터베이스 심층 학습 노트</h1>
+                        <p style="color: #ccc; font-size: 16px;">안정적인 트랜잭션 처리와 대규모 트래픽을 견디는 쿼리 최적화의 기록</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 ftco-animate">
+                    
+                    <div class="summary-box">
+                        <p style="margin-bottom:0; font-size: 18px; line-height: 1.8; color: #333;">
+                            <strong>"백엔드 시스템의 병목 현상 90%는 데이터베이스 I/O에서 발생합니다."</strong><br>
+                            단순히 테이블을 만들고 데이터를 꺼내오는 것을 넘어, Spring Boot(Java)와 연동되었을 때 데이터가 <span class="highlight-text">어떻게 정합성을 유지(ACID)하고, 어떻게 B-Tree 인덱스를 타며, 실행 계획(Execution Plan)이 어떻게 수립되는지</span>를 원리 단계부터 파헤칩니다.
+                        </p>
+                    </div>
+
+                    <div class="content-section">
+                        <span class="tag-badge">Phase 1. Architecture</span>
+                        <h3>데이터 모델링과 트랜잭션 아키텍처</h3>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="sql-card">
+                                    <h4>1. 정규화(Normalization)와 반정규화</h4>
+                                    <p class="text-muted" style="font-size: 15px;">데이터베이스 설계 시 '쓰기(Write) 성능'과 '읽기(Read) 성능'의 트레이드오프를 조율합니다.</p>
+                                    <ul class="custom-list" style="font-size: 14.5px;">
+                                        <li><strong>제1~3 정규화:</strong> 중복 데이터를 제거하여 '삽입/갱신/삭제 이상(Anomaly)'을 방지. 데이터 무결성이 최우선인 시스템에 적용.</li>
+                                        <li><strong>반정규화(De-normalization):</strong> 잦은 JOIN으로 인해 조회(Select) 성능이 심각하게 저하될 때, 시스템 성능 향상을 위해 의도적으로 중복을 허용하는 기법.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="sql-card">
+                                    <h4>2. 트랜잭션(Transaction)과 ACID 특성</h4>
+                                    <p class="text-muted" style="font-size: 15px;">백엔드 비즈니스 로직(예: 송금 시스템)에서 절대 깨져서는 안 되는 4가지 원칙입니다.</p>
+                                    <ul class="custom-list" style="font-size: 14.5px;">
+                                        <li><strong>Atomicity (원자성):</strong> ALL or NOTHING. 모두 성공하거나 모두 실패해야 함.</li>
+                                        <li><strong>Consistency (일관성):</strong> 트랜잭션 전후로 DB 제약조건이 일관되게 유지되어야 함.</li>
+                                        <li><strong>Isolation (고립성):</strong> 실행 중인 트랜잭션에 다른 트랜잭션이 간섭할 수 없음.</li>
+                                        <li><strong>Durability (영속성):</strong> 완료된 결과는 영구적으로 저장되어야 함.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <span class="tag-badge">Phase 2. Query Optimization</span>
+                        <h3>다중 테이블 연산과 조인(JOIN) 최적화</h3>
+                        
+                        <div class="sql-card">
+                            <h4>1. 카테시안 곱(Cartesian Product)의 위험성</h4>
+                            <p style="font-size: 15.5px; color: #444; line-height: 1.7;">
+                                조인(JOIN) 조건을 실수로 누락하거나 잘못 설정하면 <code>CROSS JOIN</code>이 발생하여 두 테이블의 행을 곱한(M * N) 방대한 데이터가 메모리에 올라옵니다. 이는 백엔드 서버 메모리 초과(OOM) 및 DB 락(Lock)의 주원인이 되므로, <strong>항상 연결 고리(ON 절)의 인덱스 여부를 확인</strong>해야 합니다.
+                            </p>
+                        </div>
+
+                        <div class="sql-card">
+                            <h4>2. 위치에 따른 서브쿼리(Subquery)의 활용</h4>
+                            <p style="font-size: 15px; color: #555;">복잡한 비즈니스 로직을 처리할 때 JOIN만으로 해결하기 어려운 경우 서브쿼리를 전략적으로 배치합니다.</p>
+                            
+                            <div class="mt-4">
+                                <div class="code-header">인라인 뷰(In-Line View) & 스칼라 서브쿼리(Scalar Subquery) 예시</div>
+<pre><code><span style="color: #c678dd;">SELECT</span> 
+    E.EMP_ID, 
+    E.EMP_NAME,
+    <span style="color: #5c6370;">-- SELECT 절 (스칼라 서브쿼리): 단일 행/단일 컬럼 반환. 성능 주의 요망.</span>
+    (<span style="color: #c678dd;">SELECT</span> D.DEPT_NAME <span style="color: #c678dd;">FROM</span> DEPARTMENTS D <span style="color: #c678dd;">WHERE</span> D.DEPT_ID = E.DEPT_ID) <span style="color: #c678dd;">AS</span> DEPT_NAME,
+    V.TOTAL_SALES
+<span style="color: #c678dd;">FROM</span> EMPLOYEES E
+<span style="color: #c678dd;">JOIN</span> (
+    <span style="color: #5c6370;">-- FROM 절 (인라인 뷰): 메모리에 임시 테이블(Dynamic View)을 생성하여 조인</span>
+    <span style="color: #c678dd;">SELECT</span> EMP_ID, <span style="color: #61afef;">SUM</span>(AMOUNT) <span style="color: #c678dd;">AS</span> TOTAL_SALES
+    <span style="color: #c678dd;">FROM</span> SALES
+    <span style="color: #c678dd;">GROUP BY</span> EMP_ID
+) V <span style="color: #c678dd;">ON</span> E.EMP_ID = V.EMP_ID;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <span class="tag-badge">Phase 3. Performance Tuning</span>
+                        <h3>백엔드 성능의 핵심: 인덱스(Index) 튜닝</h3>
+
+                        <div class="row">
+                            <div class="col-md-12 mb-4">
+                                <div class="sql-card">
+                                    <h4>1. B-Tree (Balanced Tree) 인덱스 아키텍처</h4>
+                                    <p style="font-size: 15px; color: #444; line-height: 1.7;">
+                                        관계형 데이터베이스(MySQL, Oracle 등)에서 가장 널리 쓰이는 인덱스 구조입니다. Root-Branch-Leaf 노드로 구성되며, 데이터를 탐색할 때 O(log N)의 시간 복잡도를 보장합니다. 무분별한 인덱스 생성은 오히려 <strong>INSERT/UPDATE/DELETE 시 트리의 재정렬(Index Split) 연산을 유발하여 쓰기 성능을 크게 저하시키므로</strong>, 검색 빈도와 카디널리티(분포도)를 고려한 신중한 설계가 필수적입니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sql-card">
+                            <h4>2. 안티 패턴: 인덱스를 타지 못하는 Full Table Scan</h4>
+                            <p style="font-size: 15px; color: #555;">인덱스가 생성된 컬럼이더라도, <strong>WHERE 절에서 컬럼 자체를 가공(함수 사용, 형변환)</strong>하면 DB 옵티마이저가 인덱스를 포기하고 테이블 전체를 뒤지게 됩니다.</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <div class="code-header" style="background:#e06c75;">❌ 비효율적인 쿼리 (인덱스 사용 불가)</div>
+<pre style="border-radius: 0 0 8px 8px; margin-bottom: 0;"><code><span style="color: #5c6370;">-- 컬럼(ORDER_DATE)을 SUBSTR로 가공함</span>
+<span style="color: #c678dd;">SELECT</span> * <span style="color: #c678dd;">FROM</span> ORDERS 
+<span style="color: #c678dd;">WHERE</span> <span style="color: #56b6c2;">SUBSTR</span>(ORDER_DATE, 1, 4) = <span style="color: #98c379;">'2026'</span>;
+
+<span style="color: #5c6370;">-- 묵시적 형변환 발생 (문자열 컬럼에 숫자 대입)</span>
+<span style="color: #c678dd;">SELECT</span> * <span style="color: #c678dd;">FROM</span> USERS 
+<span style="color: #c678dd;">WHERE</span> USER_PHONE = <span style="color: #d19a66;">01012345678</span>;</code></pre>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="code-header" style="background:#98c379; color:#222;">✅ 성능 최적화 쿼리 (Index Range Scan 유도)</div>
+<pre style="border-radius: 0 0 8px 8px; margin-bottom: 0;"><code><span style="color: #5c6370;">-- 컬럼을 있는 그대로 두고 상수항을 가공</span>
+<span style="color: #c678dd;">SELECT</span> * <span style="color: #c678dd;">FROM</span> ORDERS 
+<span style="color: #c678dd;">WHERE</span> ORDER_DATE >= <span style="color: #98c379;">'20260101'</span> 
+  <span style="color: #c678dd;">AND</span> ORDER_DATE < <span style="color: #98c379;">'20270101'</span>;
+
+<span style="color: #5c6370;">-- 타입 일치 (문자열은 문자열로)</span>
+<span style="color: #c678dd;">SELECT</span> * <span style="color: #c678dd;">FROM</span> USERS 
+<span style="color: #c678dd;">WHERE</span> USER_PHONE = <span style="color: #98c379;">'01012345678'</span>;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-author d-flex p-4 rounded mt-5" style="background:#f9f9f9; border: 1px solid #ddd; align-items: center;">
+                        <div class="bio mr-5">
+                            <img src="images/about.jpg" alt="김은섭" class="img-fluid rounded-circle" style="width: 100px; height: 100px; object-fit: cover; border: 3px solid #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        </div>
+                        <div class="desc">
+                            <h3 style="font-weight: 800; font-size:22px; color:#111; margin-bottom: 5px;">김은섭 (Backend Engineer)</h3>
+                            <p style="color:#555; font-size:16px; margin-bottom: 0; line-height: 1.6;">
+                                "단순히 데이터를 넣고 빼는 개발자가 아니라, <strong>100만 건의 트래픽이 몰려도 안정적으로 응답하는 데이터베이스 아키텍처</strong>를 설계하는 엔지니어가 되기 위해 깊이 있게 파고듭니다."
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="ftco-footer ftco-section mt-5" style="border-top:1px solid #eee; padding: 4em 0; background:#fff;">
+        <div class="container text-center">
+            <p style="color:#aaa; font-size:14px; margin-bottom:0;">Copyright &copy; 2026 EunSeob Kim. Designed for Backend Engineering Portfolio.</p>
+        </div>
+    </footer>
+
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#4F86F3" />
+        </svg></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
