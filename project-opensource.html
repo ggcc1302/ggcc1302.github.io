@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>프로젝트 상세 - 오픈소스 커스터마이징</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        body { color: #222222 !important; }
+        p { color: #222222 !important; line-height: 1.8; font-size: 16px; }
+        li { color: #111111 !important; font-size: 15px; }
+        h1, h2, h3, h4, h5, .heading { color: #000000 !important; }
+        .text-muted { color: #555555 !important; }
+        .bg-light { background-color: #f8f9fa !important; border: 1px solid #e9ecef; }
+        code { font-family: monospace; background: #f1f3f5; color: #d63384; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+        
+        .kpi-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 30px; }
+        .kpi-card { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px 10px; text-align: center; }
+        .kpi-val { font-size: 22px; font-weight: 800; color: #ff6b2b; line-height: 1.2; margin-bottom: 8px; }
+        .kpi-val.success { color: #4caf7d; }
+        .kpi-val.blue { color: #2d7dd2; }
+        .kpi-title { font-size: 12px; color: #666666; font-weight: 600; line-height: 1.4; }
+
+        /* 프리미엄 코드 블록 스타일링 */
+        .ide-container {
+            background: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .ide-header {
+            background: #2d2d2d;
+            padding: 8px 15px;
+            color: #d4d4d4;
+            font-family: monospace;
+            font-size: 13px;
+            border-bottom: 1px solid #444;
+            display: flex;
+            align-items: center;
+        }
+        .ide-header::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #ff5f56;
+            border-radius: 50%;
+            margin-right: 6px;
+            box-shadow: 16px 0 0 #ffbd2e, 32px 0 0 #27c93f;
+        }
+        .ide-header span { margin-left: 40px; }
+        .ide-body {
+            padding: 15px;
+            margin: 0;
+            overflow-x: auto;
+        }
+        .ide-body pre {
+            margin: 0;
+            padding: 0;
+        }
+        .ide-body code {
+            background: transparent;
+            color: #d4d4d4;
+            font-family: 'Consolas', 'JetBrains Mono', monospace;
+            font-size: 13.5px;
+            line-height: 1.6;
+            padding: 0;
+        }
+        /* 문법 하이라이팅 색상 */
+        .syn-keyword { color: #569cd6; }
+        .syn-method { color: #dcdcaa; }
+        .syn-string { color: #ce9178; }
+        .syn-comment { color: #6a9955; }
+        .syn-class { color: #4ec9b0; }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar" style="position: sticky; top: 0; background: #fff !important; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color: #000 !important;"><span>K</span>imEunSeob</a>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <span style="font-family: 'Poppins', Arial, sans-serif; font-weight: 700; font-size: 16px; color: #000 !important; letter-spacing: -0.5px;">← 메인으로 돌아가기</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="ftco-section" id="project-detail-section" style="padding-top: 60px;">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-12 ftco-animate">
+                    <span class="subheading text-primary" style="font-size: 14px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px;">Open Source Contribution &amp; Refactoring</span>
+                    <h1 class="mb-3" style="font-size: 36px; font-weight: 800; letter-spacing: -1px;">오픈소스 번역 프로그램 정적 분석 및 커스터마이징</h1>
+                    <p class="lead" style="font-size: 18px; color: #444444 !important;">문서화되지 않은 레거시 코드베이스의 호출 계층(Call Graph)을 역추적하여, 기존 아키텍처를 파괴하지 않고 새로운 기능을 통합(Non-destructive Integration)한 리팩토링 프로젝트</p>
+                    <hr style="border-top: 2px solid #dddddd;">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 ftco-animate">
+                    
+                    <h2 class="mb-3" style="font-size: 24px; font-weight: 700;">1. 프로젝트 개요</h2>
+                    
+                    <div class="kpi-container mt-4">
+                        <div class="kpi-card">
+                            <div class="kpi-val blue">Call Graph</div>
+                            <div class="kpi-title">레거시 코드<br>역추적 및 정적 분석</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-val">-40%</div>
+                            <div class="kpi-title">반복 작업<br>소요 시간 단축</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-val success">0 Loss</div>
+                            <div class="kpi-title">이벤트 레이스 컨디션<br>해소 및 소실률 0건</div>
+                        </div>
+                    </div>
+
+                    <p>기존에 배포된 파이썬 기반 번역 오픈소스 프로그램을 직접 활용하며 발견한 실무적 불편함을 해소하기 위해 진행한 프로젝트입니다. 소스코드 클론 후 문서화되지 않은 내부 로직을 디버깅을 통해 역추적하고, 데이터 연속성 확보를 위한 파일 입출력(Persistent Storage) 및 생산성 향상을 위한 단축키 시스템을 기존 아키텍처에 위배되지 않도록 안전하게 삽입했습니다.</p>
+                    
+                    <h2 class="mb-3 mt-5" style="font-size: 24px; font-weight: 700;">2. 주요 개선 사항 및 기여</h2>
+                
+                    
+                    <ul class="pl-4" style="line-height: 1.8;">
+                        <li class="mb-3"><strong style="color: #000;">영속성 데이터 관리(File I/O) 구축:</strong> 일회성으로 소멸되는 번역 데이터를 별도의 물리 파일로 추출(Export)하고 다시 복원(Import)할 수 있는 로직을 설계하여 데이터 관리의 연속성을 확보했습니다.</li>
+                        <li class="mb-3"><strong style="color: #000;">Batch Processing 인터페이스 설계:</strong> 마우스 클릭 중심의 비효율적인 기존 UI를 개선하기 위해 <code>QAction</code> 및 이벤트 바인딩으로 전역 단축키 매핑 시스템을 구축했습니다. 이를 통해 대량 데이터 편집 시의 작업 생산성을 약 <strong>40% 이상 향상</strong>시켰습니다.</li>
+                        <li class="mb-3"><strong style="color: #000;">레거시 코드 리딩 및 리팩토링:</strong> 타인의 소스코드를 정적 분석(Static Analysis)하여 데이터 흐름(Data Flow)을 추적하고, 기존 GUI 프레임워크의 생명주기와 충돌하지 않도록 신규 기능을 통합했습니다.</li>
+                    </ul>
+
+                    <div class="ide-container mt-4 mb-4">
+                        <div class="ide-header"><span>기존 레거시 렌더링 루프를 파괴하지 않고, PyQt(QAction) 생명주기 내에 신규 배치(Batch) 기능을 안전하게 통합한 코드 스니펫</span></div>
+                        <div class="ide-body">
+<pre><code><span class="syn-keyword">def</span> <span class="syn-method">setupRegisterWidget</span>(self):
+    <span class="syn-comment"># --- [1] 강제 전체 저장 버튼 (기존 유지) ---</span>
+    force_save_action = <span class="syn-class">QAction</span>(<span class="syn-string">"Force Save All Project"</span>, self.titleBar)
+    force_save_action.triggered.connect(self.force_save_all_data)
+    self.titleBar.viewMenu.addAction(force_save_action)
+    <span class="syn-comment"># --- [2] 전체 자동 레이아웃 버튼 (신규 피처 통합) ---</span>
+    auto_layout_action = <span class="syn-class">QAction</span>(<span class="syn-string">"Auto Layout All Pages"</span>, self.titleBar)
+    <span class="syn-comment"># 안전성이 검증된 단일 선택 레이아웃 함수를 전체 실행으로 콜백 매핑</span>
+    auto_layout_action.triggered.connect(self.auto_layout_selected)
+    self.titleBar.viewMenu.addAction(auto_layout_action)
+    self.titleBar.viewMenu.addSeparator()
+
+    <span class="syn-keyword">for</span> cfg_name <span class="syn-keyword">in</span> shared.config_name_to_view_widget:
+        d = shared.config_name_to_view_widget[cfg_name]
+        widget: <span class="syn-class">ViewWidget</span> = d[<span class="syn-string">'widget'</span>]
+        action = <span class="syn-class">QAction</span>(widget.action_name, self.titleBar)
+        action.setCheckable(<span class="syn-keyword">True</span>)
+        visible = getattr(pcfg, cfg_name)
+        action.setChecked(visible)
+        action.triggered.connect(self.action_set_view_visible)</code>
+        </pre>
+                        </div>
+                    </div>
+                    
+
+                    <h2 class="mb-3 mt-5" style="font-size: 24px; font-weight: 700;">3. 트러블슈팅: 이벤트 루프 동기화 충돌 해결 💡</h2>
+                    
+                    <div class="p-4 bg-light rounded border-left border-primary mb-4">
+                        <h4 class="h5 font-weight-bold mb-2">이슈 01: UI 응답 불능 및 메인 스레드 블로킹</h4>
+                        <p class="mb-3" style="font-size: 15px; color: #333333 !important;"><strong>[상황 및 해결]</strong> Python GUI 프레임워크의 메인 이벤트 루프는 단일 스레드(Single-threaded Event Loop)로 동작하므로, 파일 I/O나 대용량 텍스트 처리 로직을 메인 스레드에서 직접 호출할 경우 루프가 블로킹되어 UI가 응답 불능 상태에 빠지는 구조적 한계가 있었습니다.<br>이를 해결하기 위해 무거운 I/O 작업을 <code>threading.Thread</code>로 워커 스레드에 위임하고, 작업 완료 후 콜백(Callback)을 메인 루프의 다음 틱(Tick)에서 스레드-안전하게 반영되도록 이벤트 격리 구조를 재설계했습니다.</p>
+                        
+                        <h4 class="h5 font-weight-bold mb-2 mt-4">이슈 02: 단축키 이벤트 소실(Race Condition) 현상</h4>
+                        <p class="mb-0" style="font-size: 15px; color: #333333 !important;"><strong>[상황 및 해결]</strong> 단축키 이벤트와 GUI 콜백의 실행 시점 불일치(Race Condition)를 해소하기 위해, 디버거의 Step-over 및 Watch 기능으로 프레임별 콜 스택을 추적했습니다.<br>  이를 통해 이벤트 바인딩이 위젯 초기화 이전에 등록되던 타이밍 버그를 식별하고, 위젯 생명주기(Lifecycle) 이후로 호출 시점을 지연시켜 충돌을 제거했습니다. 리팩토링 전 약 3회 중 1회꼴로 발생하던 이벤트 소실 현상을, <strong>동일 조건 반복 테스트에서 소실 0건</strong>으로 완벽히 해결했습니다.</p>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 sidebar ftco-animate">
+                    <div class="sidebar-box p-4 bg-light rounded shadow-sm" style="position: sticky; top: 100px;">
+                        <h3 class="heading-sidebar" style="font-size: 18px; font-weight: 700; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px;">Project Info</h3>
+                        
+                        <div class="block-21 mb-4">
+                            <div class="text">
+                                <h4 class="font-weight-bold" style="font-size: 15px; margin-bottom: 5px;">개발 정보</h4>
+                                <div class="info-row" style="display: flex; justify-content: space-between; font-size: 13px; border-bottom: 1px solid #eee; padding: 5px 0;">
+                                    <span class="text-muted">개발 형태</span>
+                                    <strong>개인 기여 (오픈소스 수정)</strong>
+                                </div>
+                                <div class="info-row" style="display: flex; justify-content: space-between; font-size: 13px; padding: 5px 0;">
+                                    <span class="text-muted">핵심 성과</span>
+                                    <strong style="color: #2d7dd2;">Event Loop &amp; Race Condition 제어</strong>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="block-21 mb-4">
+                            <div class="text">
+                                <h4 class="font-weight-bold" style="font-size: 15px; margin-bottom: 5px;">기술 스택 (Tech Stack)</h4>
+                                <div class="meta mt-2" style="display: flex; flex-wrap: wrap; gap: 5px;">
+                                    <span class="badge badge-dark p-2" style="font-size: 12px; font-weight: 500; background: #3776AB; color: #fff;">Python</span>
+                                    <span class="badge badge-dark p-2" style="font-size: 12px; font-weight: 500; background: #222222; color: #fff;">PyQt / PySide</span>
+                                    <span class="badge badge-dark p-2" style="font-size: 12px; font-weight: 500; background: #4caf7d; color: #fff;">Non-destructive Integration</span>
+                                    <span class="badge badge-dark p-2" style="font-size: 12px; font-weight: 500; background: #ff6b2b; color: #fff;">Static Code Analysis</span>
+                                    <span class="badge badge-dark p-2" style="font-size: 12px; font-weight: 500; background: #555555; color: #fff;">Event-Driven Arch</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+        </svg></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

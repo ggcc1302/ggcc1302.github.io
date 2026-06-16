@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>프로젝트 상세 - 무협 인디 게임 개발</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        body {
+            color: #222222 !important;
+        }
+        p {
+            color: #222222 !important;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        li {
+            color: #111111 !important;
+            font-size: 15px;
+        }
+        h1, h2, h3, h4, h5, .heading {
+            color: #000000 !important;
+        }
+        .text-muted {
+            color: #555555 !important;
+        }
+        .bg-light {
+            background-color: #f8f9fa !important;
+            border: 1px solid #e9ecef;
+        }
+        code {
+            font-family: monospace;
+            background: #f1f3f5;
+            color: #d63384;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        /* 클로드 KPI 박스의 오리지널 테마 이식 */
+        .kpi-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .kpi-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        .kpi-val {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ff6b2b;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .kpi-val.success {
+            color: #4caf7d;
+        }
+        .kpi-title {
+            font-size: 12px;
+            color: #666666;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar" style="position: sticky; top: 0; background: #fff !important; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color: #000 !important;"><span>K</span>imEunSeob</a>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <span style="font-family: 'Poppins', Arial, sans-serif; font-weight: 700; font-size: 16px; color: #000 !important; letter-spacing: -0.5px;">← 메인으로 돌아가기</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="ftco-section" id="project-detail-section" style="padding-top: 60px;">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-12 ftco-animate">
+                    <span class="subheading text-primary" style="font-size: 14px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px;">1-Person Game Development Project</span>
+                    <h1 class="mb-3" style="font-size: 38px; font-weight: 800; letter-spacing: -1px;">무협 로그라이크 인디 게임 개발 및 런타임 최적화</h1>
+                    <p class="lead" style="font-size: 18px; color: #444444 !important;">수백 개의 엔티티가 실시간으로 동시 스폰되는 환경에서, <code>UnityEngine.Pool</code> 기반 오브젝트 풀링 아키텍처를 구축하여 GC Alloc을 5.2 MB에서 0 B로 완전히 제거하고 안정적인 120 FPS를 확보한 클라이언트 최적화 프로젝트</p>
+                    <hr style="border-top: 2px solid #dddddd;">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 ftco-animate">
+                    
+                    <h2 class="mb-3" style="font-size: 24px; font-weight: 700;">1. 프로젝트 개요</h2>
+                    
+                    <div class="kpi-container mt-4">
+                        <div class="kpi-card">
+                            <div class="kpi-val">300+</div>
+                            <div class="kpi-title">동시 스폰<br>엔티티 수</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-val success">0 B</div>
+                            <div class="kpi-title">최적화 후<br>GC Alloc</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-val">120</div>
+                            <div class="kpi-title">안정 FPS<br>(Target)</div>
+                        </div>
+                    </div>
+
+                    <p>탄막 액션 로그라이크 장르에 무협 세계관의 무공(스킬) 성장 시스템을 결합한 1인 인디 게임 개발 프로젝트입니다. Unity 엔진과 C# 환경에서 객체지향 컴포넌트 설계, 데이터 구조화, 그리고 대규모 엔티티 환경의 런타임 최적화를 스크립팅 레이어에서 직접 구현하고 있습니다. 최종적으로 Steam 플랫폼 단독 출시를 목표로 빌드 파이프라인을 구축 중입니다.</p>
+                    
+                    <h2 class="mb-3 mt-5" style="font-size: 24px; font-weight: 700;">2. 시스템 설계 및 핵심 구현</h2>
+                    <p>게임 오브젝트 간 결합도를 낮추고 데이터 접근 오버헤드를 줄이기 위해, Unity 생명주기와 컴포넌트 패턴을 기반으로 아키텍처를 설계했습니다.</p>
+                    
+                    <ul class="pl-4" style="line-height: 1.9;">
+                        <li class="mb-3"><strong style="color: #000;">Runtime Loop Separation — Update / FixedUpdate:</strong> 가변 프레임 환경에서 입력 검증(<code>Update</code>)과 물리 연산(<code>FixedUpdate</code>)을 계층 분리하고, 프레임 유실에 따른 연산 오류 방지를 위해 <code>Time.deltaTime</code> 보정 아키텍처를 수립했습니다.</li>
+                        <li class="mb-3"><strong style="color: #000;">Generic Singleton — GameManager&lt;T&gt; + DontDestroyOnLoad:</strong> 씬(Scene) 전환 시 자원 파괴를 방지하기 위해 제네릭 기반 싱글톤(<code>GameManager&lt;T&gt;</code>)을 구현했습니다. <code>DontDestroyOnLoad</code>를 통해 씬 간 상태 유지를 보장하며, 중복 인스턴스 생성을 방어 코드로 차단했습니다.</li>
+                        <li class="mb-3"><strong style="color: #000;">Object Pool — ObjectPoolManager&lt;T&gt; + IPoolable Interface:</strong> <code>UnityEngine.Pool.IObjectPool&lt;T&gt;</code>를 래핑한 <code>ObjectPoolManager&lt;T&gt;</code>를 구축하고, Pool 반환 책임을 각 엔티티(<code>IPoolable</code>)에 위임하는 구조로 설계하여 Pool과 Entity 간 결합도를 최소화했습니다.</li>
+                        <li class="mb-3"><strong style="color: #000;">Skill Data Table — ScriptableObject 기반 무공 자료구조:</strong> <code>ScriptableObject</code>를 테이블 단위로 정의하여 무공(스킬)의 등급, 확률 가중치, 스텟 증가량을 데이터 레이어에서 분리했습니다. 런타임에서는 테이블을 참조하여 무작위 강화 선택 및 확률 제어 로직을 계산합니다.</li>
+                    </ul>
+
+                    <p class="mt-4 mb-4">
+                        <img src="images/architecture_diagram.png" alt="시스템 구조도 및 클래스 다이어그램" class="img-fluid rounded shadow-sm" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333/?text=architecture_diagram.png+없음';">
+                        <small class="text-muted d-block text-center mt-2" style="font-weight: 600;">▲ UnityEngine.Pool 기반의 오브젝트 풀링 아키텍처 및 컴포넌트 의존성 다이어그램</small>
+                    </p>
+
+                    <h2 class="mb-3 mt-5" style="font-size: 24px; font-weight: 700;">3. 기술적 도전 과제 및 트러블슈팅 (Troubleshooting)</h2>
+                    
+                    <div class="p-4 bg-light rounded border-left border-primary mb-4">
+                        <h4 class="h5 font-weight-bold mb-2">이슈: 대량 엔티티 동시 스폰 시 CPU 병목 및 프레임 드랍 현상</h4>
+                        <p class="mb-3" style="font-size: 15px; color: #333333 !important;"><strong>[원인 분석]</strong> 서바이버 장르 특성상 몬스터 300개 + 투사체 500개 이상이 실시간으로 화면에 등장합니다. 초기 설계에서 <code>Instantiate()</code> / <code>Destroy()</code>를 무분별하게 호출한 결과, C# 매니지드 힙(Heap) 할당 비용이 급증하고, Update 루프 내에서만 <strong>5.2 MB의 GC Alloc</strong>이 지속 발생했습니다. 빈번한 가비지 컬렉터(GC) 구동으로 메인 스레드가 순간 멈추는 <strong>GC Spike</strong> 현상이 Unity Profiler에서 계측되었습니다.</p>
+                        
+                        <p class="mb-0" style="font-size: 15px;"><strong>[해결 방안 및 성과]</strong> 
+                            런타임 가비지 생성 자체를 억제하기 위해 <code>UnityEngine.Pool.IObjectPool&lt;T&gt;</code> 표준 기반의 오브젝트 풀링 아키텍처를 구축했습니다. 초기화 시점에 필요 최소 수량의 엔티티 레퍼런스를 메모리에 캐싱하여 Pool에 격리한 뒤, 런타임 스폰 요청 시 <code>SetActive(true/false)</code> 인터페이스로 재사용하는 구조로 리팩토링했습니다. 결과적으로 런타임 인스턴스 생성 비용을 제로에 수렴시키고, <strong>GC Alloc 0 B</strong>를 프로파일러 데이터로 증명했습니다.
+                        </p>
+                    </div>
+
+                    <div class="mt-5 mb-4">
+                        <h3 class="h5 font-weight-bold mb-3" style="border-left: 4px solid #F96D00; padding-left: 10px;">📊 PROFILER BENCHMARK 결과 비교</h3>
+                        
+                        <div class="mb-4">
+                            <img src="images/최적화전.png" alt="최적화 전 프로파일러" class="img-fluid rounded shadow-sm" onerror="this.src='https://via.placeholder.com/800x450/f4f4f4/666666/?text=최적화전.png+이미지+없음';">
+                            <p class="mt-2 text-muted" style="font-size: 14px; line-height: 1.5;">
+                                <strong style="color: #d9534f;">[Before] Instantiate / Destroy 루프 가동:</strong> 무분별한 객체 생성/파괴 호출로 인해 CPU Usage 그래프가 30FPS 선 위로 날카롭게 솟구치는 <strong>GC Spike</strong> 현상이 관측됩니다. 하단의 Hierarchy를 보면 Update 루프 내에서만 무려 <strong>5.2 MB</strong>에 달하는 런타임 가비지 메모리(GC Alloc)가 지속해서 생성되며 스레드 병목 및 불안정한 프레임 드랍을 유발하고 있습니다.
+                            </p>
+                        </div>
+                        
+                        <div class="mb-4 mt-5">
+                            <img src="images/최적화후.png" alt="최적화 후 프로파일러" class="img-fluid rounded shadow-sm" onerror="this.src='https://via.placeholder.com/800x450/f4f4f4/666666/?text=최적화후.png+이미지+없음';">
+                            <p class="mt-2 text-muted" style="font-size: 14px; line-height: 1.5;">
+                                <strong style="color: #5cb85c;">[After] IObjectPool 아키텍처 적용 후:</strong> 동일한 개수의 엔티티가 스폰되는 환경임에도 불구하고, 자원 재사용 구조가 완전 안착되어 CPU Usage 그래프가 120FPS 하단에서 매우 <strong>안정적이고 평평하게(Flatline)</strong> 유지됩니다. 실시간 가비지 할당량(GC Alloc) 역시 <strong>0 B</strong>로 완벽하게 제어되었음을 증명합니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h2 class="mb-3 mt-5" style="font-size: 24px; font-weight: 700;">4. 향후 아키텍처 고도화 계획</h2>
+                    <p>클라이언트 내부에 격리된 플레이 데이터의 정합성 검증 및 위변조 방지를 위해 아래 백엔드 레이어를 순차적으로 구축할 예정입니다.</p>
+                    
+                    <ul class="pl-4" style="line-height: 1.9;">
+                        <li class="mb-2"><strong style="color: #ffaa00;">REST API:</strong> Spring Boot 기반 리더보드 서버 구축. 클라이언트에서 점수 제출 시 <strong>HMAC 서명</strong> 검증으로 위변조를 방지하는 보안 레이어 설계.</li>
+                        <li class="mb-2"><strong style="color: #ffaa00;">AUTH:</strong> <strong>JWT 기반 인증</strong> 레이어 도입. Access Token + Refresh Token 이중 구조로 세션 관리.</li>
+                        <li class="mb-2"><strong style="color: #ffaa00;">CACHE:</strong> 리더보드 조회 성능 최적화를 위해 <strong>Redis Sorted Set</strong> 구조 도입 검토. RDBMS 조회 부하를 캐시 레이어에서 흡수하는 구조 설계.</li>
+                        <li class="mb-2"><strong style="color: #ffaa00;">UNITY:</strong> 현재 MonoBehaviour 기반 아키텍처에서 <strong>DOTS(Data-Oriented Tech Stack) / ECS</strong> 구조로의 점진적 마이그레이션 검토. <strong>Addressables</strong>를 활용한 에셋 메모리 관리 최적화 적용 예정.</li>
+                    </ul>
+
+                </div>
+
+                <div class="col-md-4 sidebar ftco-animate">
+                    <div class="sidebar-box p-4 bg-light rounded shadow-sm" style="position: sticky; top: 100px;">
+                        <h3 class="heading-sidebar" style="font-size: 18px; font-weight: 700; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px;">Project Info</h3>
+                        
+                        <div class="block-21 mb-4">
+                            <div class="text">
+                                <h4 class="font-weight-bold" style="font-size: 15px; margin-bottom: 5px;">개발 정보</h4>
+                                <div class="info-row" style="display: flex; justify-content: space-between; font-size: 13px; border-bottom: 1px solid #eee; padding: 5px 0;">
+                                    <span class="text-muted">개발 형태</span>
+                                    <strong>1인 인디 개발</strong>
+                                </div>
+                                <div class="info-row" style="display: flex; justify-content: space-between; font-size: 13px; border-bottom: 1px solid #eee; padding: 5px 0;">
+                                    <span class="text-muted">엔진</span>
+                                    <strong>Unity Engine</strong>
+                                </div>
+                                <div class="info-row" style="display: flex; justify-content: space-between; font-size: 13px; border-bottom: 1px solid #eee; padding: 5px 0;">
+                                    <span class="text-muted">언어</span>
+                                    <strong>C# / Scripting</strong>
+                                </div>
+                                <div class="info-row" style="display: flex; justify-content: space-between; font-size: 13px; padding: 5px 0;">
+                                    <span class="text-muted">출시 목표</span>
+                                    <strong>Steam (단독)</strong>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="block-21 mb-4">
+                            <div class="text">
+                                <h4 class="font-weight-bold" style="font-size: 15px; margin-bottom: 5px;">기술 스택 (Tech Stack)</h4>
+                                <div class="meta mt-2">
+                                    <span class="badge badge-dark p-2 mb-1" style="font-size: 12px; font-weight: 500; background: #111111; color: #fff;">Unity Engine</span>
+                                    <span class="badge badge-dark p-2 mb-1" style="font-size: 12px; font-weight: 500; background: #222222; color: #fff;">C# Scripting</span>
+                                    <span class="badge badge-dark p-2 mb-1" style="font-size: 12px; font-weight: 500; background: #ff6b2b; color: #fff;">IObjectPool&lt;T&gt;</span>
+                                    <span class="badge badge-dark p-2 mb-1" style="font-size: 12px; font-weight: 500; background: #333333; color: #fff;">ScriptableObject</span>
+                                    <span class="badge badge-dark p-2 mb-1" style="font-size: 12px; font-weight: 500; background: #444444; color: #fff;">Unity Profiler</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+        </svg></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

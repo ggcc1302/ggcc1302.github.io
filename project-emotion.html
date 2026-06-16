@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>프로젝트 상세 - 감정창고 콘텐츠 큐레이션 시스템</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        body {
+            color: #222222 !important;
+        }
+        p {
+            color: #222222 !important;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        li {
+            color: #111111 !important;
+            font-size: 15px;
+        }
+        h1, h2, h3, h4, h5, .heading {
+            color: #000000 !important;
+        }
+        .text-muted {
+            color: #555555 !important;
+        }
+        .bg-light {
+            background-color: #f8f9fa !important;
+            border: 1px solid #e9ecef;
+        }
+        code {
+            font-family: monospace;
+            background: #f1f3f5;
+            color: #d63384;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .kpi-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        .kpi-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px 5px;
+            text-align: center;
+        }
+        .kpi-val {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ff6b2b;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+        .kpi-val.success {
+            color: #4caf7d;
+        }
+        .kpi-val.blue {
+            color: #2d7dd2;
+        }
+        .kpi-val.purple {
+            color: #8e44ad;
+        }
+        .kpi-title {
+            font-size: 11px;
+            color: #666666;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        @media (max-width: 768px) {
+            .kpi-container { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar" style="position: sticky; top: 0; background: #fff !important; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color: #000 !important;"><span>K</span>imEunSeob</a>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <span style="font-family: 'Poppins', Arial, sans-serif; font-weight: 700; font-size: 16px; color: #000 !important; letter-spacing: -0.5px;">← 메인으로 돌아가기</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="ftco-section" id="project-detail-section" style="padding-top: 60px;">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-12 ftco-animate">
+                    <span class="subheading text-primary" style="font-size: 14px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px;">AI Pipeline &amp; DB Infrastructure Project</span>
+                    <h1 class="mb-3" style="font-size: 38px; font-weight: 800; letter-spacing: -1px;">일기 정서 분석 및 데이터 기반 인프라 설계 <span style="color: #ff6b2b;">(감정창고)</span></h1>
+                    <p class="lead" style="font-size: 18px; color: #444444 !important;">사용자가 작성한 자연어 일기 데이터를 Gemini 2.0 Flash 엔진으로 오케스트레이션하고, 결함 없는 PostgreSQL 인프라 및 트랜잭션을 설계한 데이터 중심 백엔드 프로젝트</p>
+                    <hr style="border-top: 2px solid #dddddd;">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 ftco-animate">
+                    
+                    <h2 class="mb-3" style="font-size: 24px; font-weight: 700;">1. 프로젝트 개요</h2>
+                    
+                    <div class="kpi-container mt-4">
+                        <div class="kpi-card">
+                            <div class="kpi-val">Gemini 2.0</div>
+                            <div class="kpi-title">실시간 정서<br>분석 엔진</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-val blue">Fallback</div>
+                            <div class="kpi-title">SPOF 방지<br>키워드 스캐너</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-val success">Indirect Path</div>
+                            <div class="kpi-title">추적성 중심<br>식별 경로 최적화</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-val purple">Cascade</div>
+                            <div class="kpi-title">무결성 보장<br>원자성 트랜잭션</div>
+                        </div>
+                    </div>
+
+                    <p>본 프로젝트는 유저가 기록한 일기 본문과 익명 커뮤니티의 텍스트 데이터를 수집하여 심리적 정서 상태를 정량화하고, 축적된 데이터를 바탕으로 통계 분석 리포트를 제공하는 웹 서비스 백엔드 인프라입니다. 외부 대규모 언어 모델(LLM) API의 통합 오케스트레이션 레이어 구축부터, 외부 인프라 마비 시 가동되는 백업 엔진 설계, 무결성을 보장하는 관계형 데이터베이스(RDBMS) 모델링 및 쿼리 라우팅 최적화를 전담하여 시스템의 안정성과 확장성을 증명하였습니다.</p>
+                    
+                    <h2 class="mb-3 mt-5" style="font-size: 24px; font-weight: 700;">2. 핵심 담당 역할 및 아키텍처 설계</h2>
+                    <p>AI 파이프라인의 안전한 구조화와 대용량 텍스트 처리 환경에서 유기적으로 구동되는 데이터 엔지니어링 계층을 하이 레벨 아키텍처로 구현했습니다.</p>
+                    
+                    <ul class="pl-4" style="line-height: 1.8;">
+                        <li class="mb-3"><strong style="color: #000;">Gemini 2.0 Flash 기반 AI 정서 분석 엔진 구축 (AI 부문):</strong> 자연어 처리(NLP) 파이프라인을 개발하여 사용자의 텍스트 문맥을 실시간 계량화했습니다. 외부 LLM의 자유 응답이 유발하는 시스템 예외를 원천 차단하고자 <code>Few-shot 프롬프트 엔지니어링</code> 기술을 도입했으며, 분석 데이터를 DB 표준 규격인 JSON 포맷 및 고유 <code>emotion_code</code>로 분류·매핑하는 규칙을 최적화했습니다. 프롬프트에 '따뜻한 심리 상담사' 페르소나를 주입하여 생성된 위로 문구를 데이터베이스 영속성 계층에 동적 기록하는 흐름을 완성했습니다.</li>
+                        <li class="mb-3"><strong style="color: #000;">관계형 데이터베이스(RDBMS) 모델링 및 경로 최적화 (DB 부문):</strong> 서비스 데이터의 무결성을 확보하기 위해 PostgreSQL 환경에서 <code>User ➔ Diary ➔ Analysis ➔ EmotionCode</code> 간의 체계적인 논리 데이터 모델을 구축했습니다. 사용자와 감정 코드를 직접 잇지 않고 추적성 중심의 <strong>간접 식별 경로</strong>로 설계하여, 정서 이력(History)의 무결성을 보존하는 동시에 마이페이지 감정 리포트 연산용 쿼리 속도를 대폭 개선했습니다.</li>
+                    </ul>
+
+                    <p class="mt-4 mb-5">
+                        <img src="images/emotion_architecture_diagram.png" alt="감정창고 시스템 아키텍처 다이어그램" class="img-fluid rounded shadow-sm" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333/?text=architecture_diagram.png+이미지+없음';">
+                        <small class="text-muted d-block text-center mt-2" style="font-weight: 600;">▲ React.js - FastAPI - PostgreSQL - Gemini API 간의 실시간 정서 분석 및 데이터 파이프라인 구조도</small>
+                    </p>
+
+                    <h2 class="mb-3 mt-5" style="font-size: 24px; font-weight: 700;">3. 기술적 도전 과제 및 트러블슈팅 (Troubleshooting)</h2>
+                    
+                    <div class="p-4 bg-light rounded border-left border-primary mb-4">
+                        <h4 class="h5 font-weight-bold mb-2">이슈 01: 외부 AI 인프라 의존성으로 인한 단일 장애점(SPOF) 리스크 방어</h4>
+                        <p class="mb-3" style="font-size: 15px; color: #333333 !important;"><strong>[상황 및 원인]</strong> 외부 AI API 연동 중 급격한 트래픽 쏠림으로 인한 구글 서버 제한(`HTTP 429`)이나 할당량(Quota) 초과 장애가 발생할 경우, 일기 저장 및 분석 파이프라인 전체가 멈춰 서며 웹 서비스 전체가 마비되는 단일 장애점(SPOF) 리스크가 존재했습니다.</p>
+                        
+                        <p class="mb-0" style="font-size: 15px;"><strong>[해결 방안 및 성과]</strong> 
+                            인프라 에러 감지 즉시 서버 단에서 예외 분기가 트리거되도록 안전 메커니즘을 수립하고, Python의 <code>any()</code> 논리 구조 기반 <strong>내장 키워드 스캐너</strong> 백업 엔진을 직접 구현했습니다. API 마비 시 일기 본문 속 정서 유발 키워드를 자체 스캔하고, 매칭 실패 시 기본 도메인인 '평온' 데이터 및 중립 마스코트 이미지 경로(`mood_map.get`)를 강제로 매핑 통합하는 무중단 Fallback 아키텍처를 완성했습니다.
+                        </p>
+                    </div>
+
+                    <div class="p-4 bg-light rounded border-left border-success mb-4">
+                        <h4 class="h5 font-weight-bold mb-2" style="color: #2e7d32 !important;">이슈 02: 데이터 삭제 트랜잭션 충돌 및 커뮤니티 메인 로드 I/O 병목 최적화</h4>
+                        <p class="mb-3" style="font-size: 15px; color: #333333 !important;"><strong>[상황 및 원인]</strong> 첫째, 익명 커뮤니티 내 탈퇴/제재 유저 처리 시 외래키(FK) 무결성 제약조건 위배로 데이터 정합성이 깨지는 크래시가 발생했습니다. 둘째, 커뮤니티 메인화면 접근 시 전체 기록을 스캔하느라 DB 메모리 I/O 과부하가 발생했습니다.</p>
+                        
+                        <p class="mb-0" style="font-size: 15px;"><strong>[해결 방안 및 성과]</strong> 
+                            첫째, 원자성(Atomicity)을 보장하기 위해 데이터베이스 단에서 자식 레코드(Diary)를 선행 파괴한 후 부모 엔티티(User)를 안전하게 제거하는 <strong>순차적 캐스케이드(Cascade) 트랜잭션</strong>을 수립했습니다. 둘째, 조회 쿼리 최적화를 위해 타임라인 역순 정렬 인덱스(`Diary.date.desc()`)를 타도록 인덱스 라우팅을 제어하고 최신 데이터 검색을 10건(`limit(10)`)으로 엄격히 제한하여 메인 화면 로드 속도를 획기적으로 향상시켰습니다.
+                        </p>
+                    </div>
+
+                    <h2 class="mb-3 mt-5" style="font-size: 24px; font-weight: 700;">4. 인프라 보안 및 관리자 데이터 설계</h2>
+                    <p>안정적인 서비스 운영 및 악성 유저 방어를 위해 철저한 보안 계층과 모니터링 모듈을 설계했습니다.</p>
+                    
+                    <ul class="pl-4" style="line-height: 1.8;">
+                        <li class="mb-2"><strong style="color: #000;">관리자 세션 검증 및 집계 자동화:</strong> 일반 사용자의 경로 우회 참조를 차단하도록 관리자 권한 플래그(<code>is_admin</code>) 보안 검증 레이어를 구축했습니다. 운영자 전용 대시보드(<code>/admin/dashboard</code>) 호출 시 데이터베이스 내부의 집계 함수(<code>count()</code>)와 유기적으로 실시간 결합하여 전체 회원 수 및 누적 일기 작성 통계 지표를 실시간 모니터링하는 인프라를 가동 중입니다.</li>
+                    </ul>
+
+                </div>
+
+                <div class="col-md-4 sidebar ftco-animate">
+                    <div class="sidebar-box p-4 bg-light rounded shadow-sm" style="position: sticky; top: 100px;">
+                        <h3 class="heading-sidebar" style="font-size: 18px; font-weight: 700; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px;">Project Info</h3>
+                        
+                        <div class="block-21 mb-4">
+                            <div class="text">
+                                <h4 class="font-weight-bold" style="font-size: 15px; margin-bottom: 5px;">개발 정보</h4>
+                                <div class="info-row" style="display: flex; justify-content: space-between; font-size: 13px; border-bottom: 1px solid #eee; padding: 5px 0;">
+                                    <span class="text-muted">개발 형태</span>
+                                    <strong>팀 프로젝트</strong>
+                                </div>
+                                <div class="info-row" style="display: flex; justify-content: space-between; font-size: 13px; border-bottom: 1px solid #eee; padding: 5px 0;">
+                                    <span class="text-muted">담당 역할</span>
+                                    <strong style="color: #2d7dd2;">AI 파이프라인 &amp; DB 인프라 설계</strong>
+                                </div>
+                                <div class="info-row" style="display: flex; justify-content: space-between; font-size: 13px; padding: 5px 0;">
+                                    <span class="text-muted">데이터베이스</span>
+                                    <strong style="color: #8e44ad;">PostgreSQL</strong>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="block-21 mb-4">
+                            <div class="text">
+                                <h4 class="font-weight-bold" style="font-size: 15px; margin-bottom: 5px;">기술 스택 (Tech Stack)</h4>
+                                <div class="meta mt-2">
+                                    <span class="badge badge-dark p-2 mb-1" style="font-size: 12px; font-weight: 500; background: #111111; color: #fff;">Gemini 2.0 Flash</span>
+                                    <span class="badge badge-dark p-2 mb-1" style="font-size: 12px; font-weight: 500; background: #222222; color: #fff;">PostgreSQL</span>
+                                    <span class="badge badge-dark p-2 mb-1" style="font-size: 12px; font-weight: 500; background: #333333; color: #fff;">Few-shot Prompt</span>
+                                    <span class="badge badge-dark p-2 mb-1" style="font-size: 12px; font-weight: 500; background: #444444; color: #fff;">Fallback Router</span>
+                                    <span class="badge badge-dark p-2 mb-1" style="font-size: 12px; font-weight: 500; background: #ff6b2b; color: #fff;">Cascade Tx</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+        </svg></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>프로젝트 상세 - 환율 변환 프로그램</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        body { color: #222222 !important; }
+        p { color: #222222 !important; line-height: 1.8; font-size: 16px; }
+        li { color: #111111 !important; font-size: 15px; }
+        h1, h2, h3, h4, h5, .heading { color: #000000 !important; }
+        .text-muted { color: #555555 !important; }
+        .bg-light { background-color: #f8f9fa !important; border: 1px solid #e9ecef; }
+        code { font-family: monospace; background: #f1f3f5; color: #d63384; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+        
+        .kpi-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 30px; }
+        .kpi-card { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px 10px; text-align: center; }
+        .kpi-val { font-size: 22px; font-weight: 800; color: #ff6b2b; line-height: 1.2; margin-bottom: 8px; }
+        .kpi-val.success { color: #4caf7d; }
+        .kpi-val.blue { color: #2d7dd2; }
+        .kpi-title { font-size: 12px; color: #666666; font-weight: 600; line-height: 1.4; }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar" style="position: sticky; top: 0; background: #fff !important; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color: #000 !important;"><span>K</span>imEunSeob</a>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <span style="font-family: 'Poppins', Arial, sans-serif; font-weight: 700; font-size: 16px; color: #000 !important; letter-spacing: -0.5px;">← 메인으로 돌아가기</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="ftco-section" id="project-detail-section" style="padding-top: 60px;">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-12 ftco-animate">
+                    <span class="subheading text-primary" style="font-size: 14px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px;">Python Architecture &amp; API Integration</span>
+                    <h1 class="mb-3" style="font-size: 38px; font-weight: 800; letter-spacing: -1px;">실시간 공공데이터 API 연동 환율 변환 프로그램</h1>
+                    <p class="lead" style="font-size: 18px; color: #444444 !important;">네트워크 통신 스레드 제어, 인메모리 캐싱, 그리고 방어적 프로그래밍(Defensive Programming)을 적용하여 시스템 무중단 안정성을 확보한 Python 애플리케이션</p>
+                    <hr style="border-top: 2px solid #dddddd;">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 ftco-animate">
+                    
+                    <h2 class="mb-3" style="font-size: 24px; font-weight: 700;">1. 프로젝트 개요</h2>
+                    
+                    <div class="kpi-container mt-4">
+                        <div class="kpi-card">
+                            <div class="kpi-val blue">Thread-Safe</div>
+                            <div class="kpi-title">UI 블로킹 방지 및<br>네트워크 비동기화</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-val">-70%</div>
+                            <div class="kpi-title">TTL 메모리 캐시로<br>API 중복 호출 절감</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-val success">100% Mocked</div>
+                            <div class="kpi-title">네트워크 예외 및<br>유닛 테스트 검증</div>
+                        </div>
+                    </div>
+
+                    <p>한국수출입은행 공공데이터 API를 연동하여 전 세계 23개 주요 통화의 실시간 환율 정보를 수집하고 변환하는 데스크톱 클라이언트입니다. 단순히 스크립트를 작성하는 것을 넘어, 네트워크 I/O 계층, 데이터 변환 계층, UI 표현 계층을 명시적으로 분리하는 <strong>계층형 아키텍처(Layered Architecture)</strong>를 적용하여 각 컴포넌트의 단일 책임(Single Responsibility)을 유지하고 유닛 테스트 가능성을 확보했습니다.</p>
+                    
+                    <h2 class="mb-3 mt-5" style="font-size: 24px; font-weight: 700;">2. 시스템 설계 및 핵심 구현</h2>
+                    <p>외부 네트워크 의존성이 높은 애플리케이션의 한계를 극복하기 위해, 캐싱 최적화와 디자인 패턴을 적극 활용했습니다.</p>
+                    
+                    <ul class="pl-4" style="line-height: 1.8;">
+                        <li class="mb-3"><strong style="color: #000;">Config Externalization (환경 변수 외부화):</strong> API 엔드포인트 및 인증 키를 <code>python-dotenv</code>를 활용해 <code>.env</code> 파일로 외부화하여, 하드코딩 없이 보안성을 유지하고 환경별 배포가 가능한 구조로 설계했습니다.</li>
+                        <li class="mb-3"><strong style="color: #000;">TTL-based In-Memory Caching (API 응답 캐싱):</strong> <code>functools.lru_cache</code>를 활용하여 환율 응답 데이터를 60초 TTL 기반의 인메모리 캐시로 관리했습니다. 이를 통해 동일 세션 내 중복 호출을 약 <strong>70% 절감</strong>하여 트래픽 효율을 극대화했습니다.</li>
+                        <li class="mb-3"><strong style="color: #000;">Strategy Pattern 및 정밀도 통제:</strong> 통화별 소수점 정책을 딕셔너리 기반 전략 객체(Strategy Pattern)로 분리하여 <code>if-else</code> 조건 분기 없이 확장이 용이하도록 구현했습니다. 또한, IEEE 754 부동소수점 표현 오차가 금융 계산에 누적되는 것을 방지하기 위해 Python <code>decimal.Decimal</code> 타입을 도입하여 변환 연산 정밀도를 소수점 4자리까지 보장했습니다.</li>
+                    </ul>
+
+                    <p class="mt-4 mb-4">
+                        <img src="images/proj_exchange.png" alt="환율 변환 프로그램 실행 화면" class="img-fluid rounded shadow-sm" onerror="this.src='https://via.placeholder.com/800x450/eeeeee/333333/?text=exchange_screenshot.png+이미지+없음';">
+                        <small class="text-muted d-block text-center mt-2" style="font-weight: 600;">▲ 실시간 API 통신 및 데이터 파싱이 적용된 환율 변환 프로그램 실행 화면</small>
+                    </p>
+
+                    <h2 class="mb-3 mt-5" style="font-size: 24px; font-weight: 700;">3. 트러블슈팅: 방어적 프로그래밍 💡</h2>
+                    
+                    <div class="p-4 bg-light rounded border-left border-primary mb-4">
+                        <h4 class="h5 font-weight-bold mb-2">이슈: 메인 스레드 블로킹 및 비정형 데이터 크래시</h4>
+                        <p class="mb-3" style="font-size: 15px; color: #333333 !important;"><strong>[상황 및 원인]</strong> 테스트 도중 API 서버 응답이 지연되자 데스크톱 UI 전체가 프리징(Freezing)되는 문제가 발생했습니다. 또한, 공공데이터 JSON 스키마가 예고 없이 변경되거나, 사용자가 연속으로 계산 버튼을 클릭할 때 다중 스레드가 폭주하여 애플리케이션이 강제 종료되는 결함이 발견되었습니다.</p>
+                        
+                        <p class="mb-0" style="font-size: 15px;"><strong>[해결 방안 및 성과]</strong> 
+                            시스템의 Fault Tolerance(장애 허용성)를 높이기 위해 <strong>방어적 프로그래밍(Defensive Programming)</strong> 기법을 전면 도입했습니다.
+                            <br><br>
+                            1) <strong>Thread Decoupling:</strong> 네트워크 I/O 호출을 <code>threading.Thread</code>로 메인 이벤트 루프로부터 분리했습니다. 최대 블로킹 구간을 <code>timeout=5</code>초로 통제하고, <code>except requests.exceptions.Timeout</code>과 <code>ConnectionError</code>를 개별 캡처하여 원인을 식별한 뒤, <code>widget.after()</code>를 통해 스레드-안전(Thread-safe)하게 UI에 Fallback 상태를 반영했습니다. 동시 클릭 시 중복 실행을 막는 락(Lock) 로직도 추가했습니다.<br><br>
+                            2) <strong>Edge-Case 제어:</strong> <code>response.raise_for_status()</code>를 통해 HTTP 4xx/5xx 전송 계층 오류를 분리했고, 빈 응답이나 스키마 변경 시 발생하는 <code>KeyError</code>를 Guard Clause로 처리했습니다. 최종적으로 <code>unittest.mock.patch('requests.get')</code>으로 네트워크 없이 모킹(Mocking)한 테스트 시나리오 전 구간에서 강제 종료(Crash) 없이 동작함을 검증했습니다.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 sidebar ftco-animate">
+                    <div class="sidebar-box p-4 bg-light rounded shadow-sm" style="position: sticky; top: 100px;">
+                        <h3 class="heading-sidebar" style="font-size: 18px; font-weight: 700; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px;">Project Info</h3>
+                        
+                        <div class="block-21 mb-4">
+                            <div class="text">
+                                <h4 class="font-weight-bold" style="font-size: 15px; margin-bottom: 5px;">개발 정보</h4>
+                                <div class="info-row" style="display: flex; justify-content: space-between; font-size: 13px; border-bottom: 1px solid #eee; padding: 5px 0;">
+                                    <span class="text-muted">개발 형태</span>
+                                    <strong>1인 개발 (기획/로직)</strong>
+                                </div>
+                                <div class="info-row" style="display: flex; justify-content: space-between; font-size: 13px; padding: 5px 0;">
+                                    <span class="text-muted">주요 성과</span>
+                                    <strong style="color: #2d7dd2;">멀티스레딩 &amp; 예외 처리 제어</strong>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="block-21 mb-4">
+                            <div class="text">
+                                <h4 class="font-weight-bold" style="font-size: 15px; margin-bottom: 5px;">기술 스택 (Tech Stack)</h4>
+                                <div class="meta mt-2" style="display: flex; flex-wrap: wrap; gap: 5px;">
+                                    <span class="badge badge-dark p-2" style="font-size: 12px; font-weight: 500; background: #3776AB; color: #fff;">Python</span>
+                                    <span class="badge badge-dark p-2" style="font-size: 12px; font-weight: 500; background: #222222; color: #fff;">Tkinter</span>
+                                    <span class="badge badge-dark p-2" style="font-size: 12px; font-weight: 500; background: #4caf7d; color: #fff;">REST API</span>
+                                    <span class="badge badge-dark p-2" style="font-size: 12px; font-weight: 500; background: #ff6b2b; color: #fff;">threading.Thread</span>
+                                    <span class="badge badge-dark p-2" style="font-size: 12px; font-weight: 500; background: #555555; color: #fff;">unittest.mock</span>
+                                    <span class="badge badge-dark p-2" style="font-size: 12px; font-weight: 500; background: #8e44ad; color: #fff;">decimal.Decimal</span>
+                                    <span class="badge badge-dark p-2" style="font-size: 12px; font-weight: 500; background: #2d7dd2; color: #fff;">python-dotenv</span>
+                                    <span class="badge badge-dark p-2" style="font-size: 12px; font-weight: 500; background: #d9534f; color: #fff;">lru_cache</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+        </svg></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
